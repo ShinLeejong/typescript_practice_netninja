@@ -15,3 +15,5 @@ tsc --init // in order to make tsconfig.js // outDir, rootDir
 \#9 - Type Aliases  <br />
 \#10 - Function Signatures <br />
 \#11 - The DOM - Type Casting(as) // index.html과 styles.css 퍼옴 <br />
+\#12 - Classes <br />
+\#13 - Public, Private & Readonly <br />
