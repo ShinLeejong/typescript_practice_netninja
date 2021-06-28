@@ -13,3 +13,5 @@ tsc --init // in order to make tsconfig.js // outDir, rootDir
 \#7 - Better workflow & tsconfig  <br />
 \#8 - Function basics and Not-to-dos with that  <br />
 \#9 - Type Aliases  <br />
+\#10 - Function Signatures <br />
+\#11 - The DOM - Type Casting(as) // index.html과 styles.css 퍼옴 <br />
