@@ -21,3 +21,4 @@ tsc --init // in order to make tsconfig.js // outDir, rootDir
 \#15 - Interfaces <br />
 \#16 - Interface with Class <br />
 \#17 - Rendering an HTML Template <br />
+\#18 - Generics <br />
