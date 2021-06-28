@@ -47,24 +47,27 @@ let docOne = addUID({name: "Leejong", age: 40});
 console.log(docOne.name); // OK
 // docOne = addUID({name: 40, age: "Leejong"}) // 타입 매칭 안됨. 사용 불가
 
-/* interface combination */
+/* ENUMS */
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
+// Each one of these keywords represents its existance by its own index
+
 interface Resource<T> {
     uid: number;
-    resourceName: string;
+    resourceType: ResourceType;
     data: T;
 }
 
 const docTwo: Resource<Object> = {
     uid: 1,
-    resourceName: "Guri",
+    resourceType: ResourceType.BOOK,
     data: {
         body: "Hi!"
     }
 }
 
 const docThree: Resource<String> = {
-    uid: 1,
-    resourceName: "Guri",
+    uid: 2,
+    resourceType: ResourceType.PERSON,
     data: "Hi!"
     // data: {          // You can't
     //     body: "Hi!"  // use 
