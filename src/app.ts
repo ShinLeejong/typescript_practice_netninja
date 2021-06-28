@@ -66,11 +66,29 @@ form.addEventListener('submit', (e) => {
         amount.valueAsNumber // A nice way to convert String value into number type
     );
 
+    let values: [string, string, number] = [tofrom.value, details.value, amount.valueAsNumber];
+
     let doc: HasFormatter;
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values); // 튜플이기 때문에 가능한 일이다
     } else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        // doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values); // 튜플이기 때문에 가능한 일이다
     }
     list.render(doc, type.value, "end");
-})
+});
+
+// Tuples
+
+/// normal
+let arr = ['Lee', 27, true];
+arr[0] = 28; // OK
+
+/// with tuple
+let tup: [string, number, boolean] = ['Guri', 25, false];
+// tup[0] = 26; // can't
+tup[0] = 'Guri-Park' // OK
+
+let arr2: [string, number];
+arr2 = ['Leejong', 27];
+// arr2 = ['Leejong', '27']; // can't
