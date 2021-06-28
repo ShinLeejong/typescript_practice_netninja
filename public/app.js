@@ -2,6 +2,8 @@
 // Class - Blueprint of code
 class Invoice {
     constructor(c, d, a) {
+        this.setAmount = (num) => this.amount = num; // Setter
+        this.getAmount = () => this.amount; // Getter
         this.client = c;
         this.details = d;
         this.amount = a;
@@ -16,8 +18,10 @@ const invTwo = new Invoice('Guri', 'Grrr', 50);
 let invoices = [];
 invoices.push(invOne, invTwo);
 invOne.client = 'Leejong'; // able to change its property
-invTwo.amount = 100;
+// invTwo.amount = 100; // not able to modify it as it is decleared as private
+invTwo.setAmount(100); // OK. Setter
 // invTwo.amount = '100'; // not able to change its type
+// invOne.details = 'nicely' // not able to modify it as it is decleared as readonly
 console.log(invOne, invTwo);
 /* --> */
 let form;

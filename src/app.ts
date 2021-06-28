@@ -1,8 +1,8 @@
 // Class - Blueprint of code
 class Invoice { // Initialize is needed for each property
-    client: string;
-    details: string;
-    amount: number;
+    public client: string; // public is default
+    readonly details: string;
+    private amount: number;
 
     constructor(c: string, d: string, a: number){
         this.client = c;
@@ -13,6 +13,9 @@ class Invoice { // Initialize is needed for each property
     format() {
         return `${this.client} owes ${this.amount}$ for ${this.details}`
     }
+
+    setAmount = (num: number): number => this.amount = num; // Setter
+    getAmount = () => this.amount;  // Getter
 }
 
 /* <!-- How to use Class really nice */
@@ -23,8 +26,11 @@ let invoices: Invoice[] = [];
 invoices.push(invOne, invTwo); 
 
 invOne.client = 'Leejong';  // able to change its property
-invTwo.amount = 100;
+// invTwo.amount = 100; // not able to modify it as it is decleared as private
+invTwo.setAmount(100); // OK. Setter
 // invTwo.amount = '100'; // not able to change its type
+// invOne.details = 'nicely' // not able to modify it as it is decleared as readonly
+
 
 console.log(invOne, invTwo);
 /* --> */
