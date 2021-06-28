@@ -1,5 +1,6 @@
 import Invoice from "./classes/Invoice";
 import Payment from "./classes/Payment";
+import { ListTemplate } from './classes/ListTemplate';
 const me = {
     name: "Leejong",
     age: 27,
@@ -38,6 +39,8 @@ const type = document.querySelector('#type');
 const tofrom = document.querySelector("#tofrom");
 const details = document.querySelector("#details");
 const amount = document.querySelector("#amount");
+const ul = document.querySelector("ul");
+const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber // A nice way to convert String value into number type
@@ -49,5 +52,5 @@ form.addEventListener('submit', (e) => {
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    console.log(doc);
+    list.render(doc, type.value, "end");
 });

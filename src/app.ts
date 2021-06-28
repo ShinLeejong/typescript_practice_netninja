@@ -2,6 +2,7 @@ import Invoice from "./classes/Invoice";
 import Payment from "./classes/Payment";
 import { HasFormatter } from './interfaces/HasFormatter';
 import { IsPerson } from './interfaces/IsPerson';
+import { ListTemplate } from './classes/ListTemplate';
 
 const me: IsPerson = {
     name: "Leejong",
@@ -53,6 +54,8 @@ const type = document.querySelector('#type') as HTMLSelectElement;
 const tofrom = document.querySelector("#tofrom") as HTMLInputElement;
 const details = document.querySelector("#details") as HTMLInputElement;
 const amount = document.querySelector("#amount") as HTMLInputElement;
+const ul = document.querySelector("ul") as HTMLUListElement;
+const list = new ListTemplate(ul);
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -69,5 +72,5 @@ form.addEventListener('submit', (e) => {
     } else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    console.log(doc);
+    list.render(doc, type.value, "end");
 })
