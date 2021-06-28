@@ -1,5 +1,7 @@
+import { HasFormatter } from '../interfaces/HasFormatter';
+
 // Class - Blueprint of code
-export default class Invoice { // Initialize is needed for each property
+export default class Invoice implements HasFormatter { // Initialize is needed for each property
     public client: string; // public is default
     readonly details: string;
     private amount: number;

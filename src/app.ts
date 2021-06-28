@@ -1,12 +1,7 @@
 import Invoice from "./classes/Invoice";
-
-// interfaces
-interface IsPerson { // Don't have to use constructor
-    name: string;
-    age: number;
-    speak(a: string): void;
-    spend(a: number): number;
-}
+import Payment from "./classes/Payment";
+import { HasFormatter } from './interfaces/HasFormatter';
+import { IsPerson } from './interfaces/IsPerson';
 
 const me: IsPerson = {
     name: "Leejong",
@@ -22,6 +17,14 @@ const me: IsPerson = {
 
 const greetPerson = (person: IsPerson) => console.log('hello', person.name);
 greetPerson(me);
+
+let docOne: HasFormatter;
+docOne = new Invoice('Lee', "Having a party", 200);
+const docTwo = new Payment('Guri', "Take a napping", 150);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne, docTwo);
+console.log(docs);
 
 /* <!-- How to use Class really nice */
 const invOne: Invoice = new Invoice('Lee', 'learning TypeScript', 250);
@@ -59,4 +62,12 @@ form.addEventListener('submit', (e) => {
         details.value,
         amount.valueAsNumber // A nice way to convert String value into number type
     );
+
+    let doc: HasFormatter;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    } else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
 })

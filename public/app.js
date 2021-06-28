@@ -1,4 +1,5 @@
 import Invoice from "./classes/Invoice";
+import Payment from "./classes/Payment";
 const me = {
     name: "Leejong",
     age: 27,
@@ -11,6 +12,12 @@ const me = {
 };
 const greetPerson = (person) => console.log('hello', person.name);
 greetPerson(me);
+let docOne;
+docOne = new Invoice('Lee', "Having a party", 200);
+const docTwo = new Payment('Guri', "Take a napping", 150);
+let docs = [];
+docs.push(docOne, docTwo);
+console.log(docs);
 /* <!-- How to use Class really nice */
 const invOne = new Invoice('Lee', 'learning TypeScript', 250);
 const invTwo = new Invoice('Guri', 'Grrr', 50);
@@ -35,4 +42,12 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber // A nice way to convert String value into number type
     );
+    let doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
 });
