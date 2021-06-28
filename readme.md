@@ -11,3 +11,4 @@ tsc --init // in order to make tsconfig.js // outDir, rootDir
 \#5 - Explicit Types
 \#6 - Any Type ( 개인적으로 좋아하지는 않음 )
 \#7 - Better workflow & tsconfig
+\#8 - Function basics and Not-to-dos with that
