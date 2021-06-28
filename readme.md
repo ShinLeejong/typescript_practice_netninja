@@ -7,8 +7,9 @@ TypeScript를 사용할 줄 모르는 건 아니나, 다시 단단하게 개념�
 tsc ...filename.ts -w
 tsc --init // in order to make tsconfig.js // outDir, rootDir
 </pre>
-\#4 - Objects & Arrays
-\#5 - Explicit Types
-\#6 - Any Type ( 개인적으로 좋아하지는 않음 )
-\#7 - Better workflow & tsconfig
-\#8 - Function basics and Not-to-dos with that
+\#4 - Objects & Arrays  <br />
+\#5 - Explicit Types  <br />
+\#6 - Any Type ( 개인적으로 좋아하지는 않음 )  <br />
+\#7 - Better workflow & tsconfig  <br />
+\#8 - Function basics and Not-to-dos with that  <br />
+\#9 - Type Aliases  <br />
