@@ -17,3 +17,4 @@ tsc --init // in order to make tsconfig.js // outDir, rootDir
 \#11 - The DOM - Type Casting(as) // index.html과 styles.css 퍼옴 <br />
 \#12 - Classes <br />
 \#13 - Public, Private & Readonly <br />
+\#14 - Modules // module => es2015 <br />
