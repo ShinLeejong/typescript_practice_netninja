@@ -18,3 +18,4 @@ tsc --init // in order to make tsconfig.js // outDir, rootDir
 \#12 - Classes <br />
 \#13 - Public, Private & Readonly <br />
 \#14 - Modules // module => es2015 <br />
+\#15 - Interfaces <br />

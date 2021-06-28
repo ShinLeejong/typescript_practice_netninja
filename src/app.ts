@@ -1,5 +1,28 @@
 import Invoice from "./classes/Invoice";
 
+// interfaces
+interface IsPerson { // Don't have to use constructor
+    name: string;
+    age: number;
+    speak(a: string): void;
+    spend(a: number): number;
+}
+
+const me: IsPerson = {
+    name: "Leejong",
+    age: 27,
+    speak(text: string): void {
+        console.log(text)
+    },
+    spend(amount: number): number {
+        return amount - 100;
+    },
+    // skills: ['mining', 'foraging'] // not able because the property "skills" is not in interface isPerson 
+}
+
+const greetPerson = (person: IsPerson) => console.log('hello', person.name);
+greetPerson(me);
+
 /* <!-- How to use Class really nice */
 const invOne: Invoice = new Invoice('Lee', 'learning TypeScript', 250);
 const invTwo: Invoice = new Invoice('Guri', 'Grrr', 50);

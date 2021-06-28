@@ -1,4 +1,16 @@
 import Invoice from "./classes/Invoice";
+const me = {
+    name: "Leejong",
+    age: 27,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        return amount - 100;
+    },
+};
+const greetPerson = (person) => console.log('hello', person.name);
+greetPerson(me);
 /* <!-- How to use Class really nice */
 const invOne = new Invoice('Lee', 'learning TypeScript', 250);
 const invTwo = new Invoice('Guri', 'Grrr', 50);
